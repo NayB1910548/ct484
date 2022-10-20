@@ -24,7 +24,7 @@ class UserProductsScreen extends StatelessWidget {
       drawer: const AppDrawer(),
       body: RefreshIndicator(
         onRefresh: () async => print('refresh products'),
-        child: buildUserProductListView(productsManager),
+        child: buildUserProductListView(),
       ),
     );
   }
