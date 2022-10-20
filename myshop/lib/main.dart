@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myshop/ui/products/cart/cart_manager.dart';
+import 'package:myshop/ui/products/edit_product_screen.dart';
 import 'package:myshop/ui/products/orders/order_manager.dart';
 import 'ui/products/products_manager.dart';
 import 'ui/products/product_detail_screen.dart';
@@ -8,6 +9,7 @@ import 'ui/products/user_products_screen.dart';
 import './ui/products/cart/cart_screen.dart';
 import 'ui/products/orders/orders_screen.dart';
 import 'package:provider/provider.dart';
+export './ui/products/edit_product_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -62,6 +64,17 @@ class MyApp extends StatelessWidget {
             },
           );
         }
+        if (settings.name == EditProductScreen.routeName) {
+            final productId = settings.arguments as String?;
+            return MaterialPageRoute(
+              builder: (ctx) {
+                return EditProductScreen(
+                  productId != null ?
+                  ctx.read<ProductsManager>().findById(productId):null,
+                );
+              },
+            );
+          }
         return null;
       },
       //home: const SafeArea(
