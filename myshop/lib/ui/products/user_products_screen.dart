@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'user_product_list_tile.dart';
 import 'products_manager.dart';
+import '../products/user_product_list_tile.dart';
 
 import './shared/app_drawer.dart';
 
