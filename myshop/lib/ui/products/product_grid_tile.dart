@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:myshop/ui/products/cart/cart_manager.dart';
+import 'package:myshop/ui/products/products_manager.dart';
 import 'package:provider/provider.dart';
 
 import '../../models/product.dart';
@@ -55,8 +56,8 @@ class ProductGridTile extends StatelessWidget {
                 isFavorite ? Icons.favorite : Icons.favorite_border,
               ),
               color: Theme.of(context).colorScheme.secondary,
-              onPressed: () {
-                product.isFavorite = !isFavorite;
+             onPressed: () {
+                ctx.read<ProductsManager>().toggleFavoriteStatus(product);
               },
             );
           },
