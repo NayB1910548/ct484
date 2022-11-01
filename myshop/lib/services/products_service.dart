@@ -99,6 +99,7 @@ class ProductsService extends FirebaseService {
       return false;
     }
   }
+
    Future<bool> saveFavoriteStatus(Product product) async {
     try {
       final url = Uri.parse(
@@ -114,7 +115,7 @@ class ProductsService extends FirebaseService {
       }
       return true;
     } catch (error) {
-      print(error);
+        print(error);
       return false;
     }
   }
